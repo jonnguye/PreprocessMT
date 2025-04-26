@@ -23,7 +23,7 @@ def main(args):
 
     # Load matrix table and samples table
     mt = hl.read_matrix_table(args.matrix_table)
-    samples_ht = hl.import_table(args.samples_table, impute=True).key_by('research_id')
+    samples_ht = hl.import_table(args.samples_table, key='research_id')
 
     # Filter matrix table to samples in samples_ht
     mt_filtered = mt.filter_cols(hl.is_defined(samples_ht[mt.s]))
