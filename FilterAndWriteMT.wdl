@@ -15,7 +15,7 @@ workflow FilterAndWriteMTWorkflow {
     }
 
     output {
-        String checkpoint_path = FilterAndWriteMTTask.output_checkpoint
+        String checkpoint_path = FilterAndWriteMTTask.output_checkpoint_path
     }
 }
 
@@ -47,6 +47,6 @@ task FilterAndWriteMTTask {
     }
 
     output {
-        String output_checkpoint = "~{output_checkpoint}"
+        String output_checkpoint_path = "~{output_checkpoint}"
     }
 }
