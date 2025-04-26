@@ -30,7 +30,7 @@ task FilterAndWriteMTTask {
         set -e
 
         # Download the Python script
-        curl -O https://raw.githubusercontent.com/jonnguye/PreprocessVCF/NotebookToWDL/filter_and_write_mt.py
+        curl -O https://raw.githubusercontent.com/jonnguye/PreprocessMT/main/filter_and_write_mt.py
 
         # Run the Python script
         python3 filter_and_write_mt.py \
