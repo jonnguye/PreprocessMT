@@ -27,7 +27,7 @@ def main(args):
 
     # Filter matrix table to samples in samples_ht
     mt_filtered = mt.filter_cols(hl.is_defined(samples_ht[mt.s]))
-    mt_filtered = mt_filtered.filter_rows(hl.len(mt.alleles) == 2)
+    mt_filtered = mt_filtered.filter_rows(hl.len(mt_filtered.alleles) == 2)
     mt_filtered = mt_filtered.filter_rows(hl.agg.any(hl.is_defined(mt_filtered.GT)))
     mt_filtered = mt_filtered.filter_rows(~hl.is_missing(mt.info.AC))
 
