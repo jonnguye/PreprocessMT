@@ -29,7 +29,7 @@ def main(args):
     mt_filtered = mt.filter_cols(hl.is_defined(samples_ht[mt.s]))
     mt_filtered = mt_filtered.filter_rows(hl.len(mt_filtered.alleles) == 2)
     mt_filtered = mt_filtered.filter_rows(hl.agg.any(hl.is_defined(mt_filtered.GT)))
-    mt_filtered = mt_filtered.filter_rows(~hl.is_missing(mt.info.AC))
+    mt_filtered = mt_filtered.filter_rows(~hl.is_missing(mt_filtered.info.AC))
 
     # Write filtered matrix table to output checkpoint
     mt_filtered.write(args.output_checkpoint, overwrite=True)
